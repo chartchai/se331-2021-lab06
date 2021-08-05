@@ -5,9 +5,7 @@ name: Deploy to Firebase Hosting on merge
       - prod-docker
 jobs:
   docker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+    runs-on: ubuntu-latest    
     steps:
       -
         name: Checkout
