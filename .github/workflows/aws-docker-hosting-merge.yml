@@ -29,3 +29,11 @@ jobs:
           context: .
           push: true
           tags: dto80/331-lab06:latest
+      - 
+        name: prepare the docker-compose run
+        run: |
+              mkdir vue-331
+              cp docker-compose.yml vue-331/docker-comopse.yml
+              cd vue-331
+              docker-compose -H ${{ secrets.HOST_SERVER }} pull
+              docker-compose -H ${{ secrets.HOST_SERVER }} up -d
