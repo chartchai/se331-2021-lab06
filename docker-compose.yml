@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+    web:
+        image: "dto80/vued"
+        ports: 
+            - 8001:80
+    
