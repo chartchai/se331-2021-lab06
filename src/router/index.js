@@ -31,12 +31,12 @@ const routes = [
     component: AddEvent,
     beforeEnter: () => {
       return OrganizerService.getOrganizers()
-        .then((response) => {          
-          GStore.organizers = response.data          
+        .then((response) => {
+          GStore.organizers = response.data
         })
         .catch(() => {
           GStore.organizers = null
-          console.log('cannot load organizer')          
+          console.log('cannot load organizer')
         })
     }
   },
