@@ -15,12 +15,12 @@
 
       <h3>Who is your organizer?</h3>
       <label>Select a Organizer</label>
-      <select v-model="event.organizer">
+      <select v-model="event.organizer.id">
         <option
           v-for="option in GStore.organizers"
-          :value="option"
-          :key="option"
-          :selected="option.id === event.id"
+          :value="option.id"
+          :key="option.id"
+          :selected="option.id === event.organizer.id"
         >
           {{ option.name }}
         </option>
