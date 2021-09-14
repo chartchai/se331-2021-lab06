@@ -14,15 +14,16 @@
       <BaseInput v-model="event.location" type="text" label="Location" />
 
       <h3>Who is your organizer?</h3>
+
       <BaseSelect
         :options="GStore.organizers"
         v-model="event.organizer.id"
-        label="Select a Organizer"
+        label="Select an Organizer"
       />
       <button type="submit">Submit</button>
     </form>
 
-    <pre>{{ event }}</pre>
+    <pre>{{ event }}</pre>    
   </div>
 </template>
 <script>

@@ -5,15 +5,15 @@
     :value="modelValue"
     v-bind="{
       ...$attrs,
-      onChange: ($event) => {
-        
-        $emit('update:modelValue', $event.target.value)
-      }
+      onChange: ($event) => { $emit('update:modelValue', $event.target.value) }
     }"
   >
-    <option v-for="option in options" :value="option.id" :key="option.id">
-      {{ option.name }}
-    </option>
+    <option
+      v-for="option in options"
+      :value="option.id"
+      :key="option.id"
+      :selected="option.id === modelValue.id"
+    >{{ option.name }}</option>
   </select>
 </template>
 
@@ -25,7 +25,7 @@ export default {
       default: ''
     },
     modelValue: {
-      type: [String, Number, Object],
+      type: [String, Number,Object],
       default: ''
     },
     options: {
