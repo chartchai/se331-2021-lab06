@@ -73,7 +73,21 @@ export default {
       })
   },
   beforeRouteUpdate(routeTo) {
-    EventService.getEvents(3, parseInt(routeTo.query.page) || 1)
+    var queryFunction
+    if (this.keyword === '') {
+      queryFunction = EventService.getEvents(
+        3,
+        parseInt(routeTo.query.page) || 1
+      )
+    } else {
+      queryFunction = EventService.getEventByKeyword(
+        this.keyword,
+        3,
+        parseInt(routeTo.query.page) || 1
+      )
+    }
+
+    queryFunction
       .then((response) => {
         this.events = response.data // <-----
         this.totalEvents = response.headers['x-total-count'] // <-----
