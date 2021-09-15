@@ -1,6 +1,11 @@
 <template>
   <h1>Events For Good</h1>
+
   <div class="events">
+    <div class="search-box">
+      <BaseInput v-model="keyword" type="text" label="Search..." />
+    </div>
+
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="pagination">
       <router-link
@@ -44,7 +49,8 @@ export default {
   data() {
     return {
       events: null,
-      totalEvents: 0 // <--- Added this to store totalEvents
+      totalEvents: 0, // <--- Added this to store totalEvents
+      keyword: null
     }
   },
 
@@ -87,6 +93,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.search-box {
+  
+  width: 300px;
+  
 }
 .pagination {
   display: flex;
