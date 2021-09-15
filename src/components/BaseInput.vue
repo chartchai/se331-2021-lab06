@@ -4,8 +4,8 @@
     class="field"
     :placeholder="label"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-    v-bind="$attrs"    
+    @input="inputHandler($event)"
+    v-bind="$attrs"
   />
 </template>
 
@@ -19,6 +19,11 @@ export default {
     modelValue: {
       type: [String, Number],
       default: ''
+    }
+  },
+  methods: {
+    inputHandler(event) {
+      this.$emit('update:modelValue', event.target.value)
     }
   }
 }
