@@ -58,7 +58,7 @@ export default {
             return EventService.uploadFile(file)
           })        
       ).then((response) => {
-        console.log(response)
+        console.log(response.map((r) => r.data))
         console.log('finish upload file')
       })
 
