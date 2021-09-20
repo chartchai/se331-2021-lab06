@@ -74,7 +74,7 @@ export default {
   },
   beforeRouteUpdate(routeTo) {
     var queryFunction
-    if (this.keyword === '') {
+    if (this.keyword == null || this.keyword === '') {
       queryFunction = EventService.getEvents(
         3,
         parseInt(routeTo.query.page) || 1
