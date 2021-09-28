@@ -8,7 +8,6 @@
       <h4>{{ event.title }}</h4>
       <span>by</span>
       <h5>{{ event.organizer.name }}</h5>
-      
     </div>
   </router-link>
 </template>
@@ -43,8 +42,6 @@ export default {
   color: #2c3e50;
   text-decoration: none;
 }
-
-
 
 /* Add a hover effect (blue shadow) */
 img:hover {

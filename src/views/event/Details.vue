@@ -16,6 +16,5 @@ img {
   padding: 5px; /* Some padding */
   margin: 5px; /* Some margin */
   width: 150px; /* Set a small width */
-  
 }
 </style>
