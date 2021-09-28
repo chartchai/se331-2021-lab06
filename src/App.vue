@@ -2,10 +2,26 @@
   <div id="flashMessage" v-if="GStore.flashMessage">
     {{ GStore.flashMessage }}
   </div>
+  
   <div id="nav">
+    <nav class="navbar navbar-expand">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <router-link to="/register" class="nav-link">
+            <font-awesome-icon icon="user-plus" /> Sign Up
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/login" class="nav-link">
+            <font-awesome-icon icon="sign-in-alt" /> Login
+          </router-link>
+        </li>
+      </ul>
+    </nav>
     <router-link :to="{ name: 'EventList' }">Home</router-link> |
     <router-link :to="{ name: 'About' }">About</router-link> |
     <router-link :to="{ name: 'AddEvent' }">New Event</router-link>
+    
   </div>
 
   <!-- new element -->
