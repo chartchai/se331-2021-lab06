@@ -2,7 +2,7 @@
   <div id="flashMessage" v-if="GStore.flashMessage">
     {{ GStore.flashMessage }}
   </div>
-  
+
   <div id="nav">
     <nav class="navbar navbar-expand">
       <ul class="navbar-nav ml-auto">
@@ -21,7 +21,6 @@
     <router-link :to="{ name: 'EventList' }">Home</router-link> |
     <router-link :to="{ name: 'About' }">About</router-link> |
     <router-link :to="{ name: 'AddEvent' }">New Event</router-link>
-    
   </div>
 
   <!-- new element -->
