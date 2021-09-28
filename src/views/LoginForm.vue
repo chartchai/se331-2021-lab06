@@ -60,13 +60,11 @@ export default {
       schema
     }
   },
-  methods:{
-    handleLogin(user){
-      
-      AuthService.login(user).then(response =>{
+  methods: {
+    handleLogin(user) {
+      AuthService.login(user).then((response) => {
         console.log(response)
       })
-      
     }
   }
 }
