@@ -32,8 +32,10 @@
       </ul>
     </nav>
     <router-link :to="{ name: 'EventList' }">Home</router-link> |
-    <router-link :to="{ name: 'About' }">About</router-link> |
-    <router-link :to="{ name: 'AddEvent' }">New Event</router-link>
+    <router-link :to="{ name: 'About' }">About</router-link> 
+    <span v-if="isAdmin"> |
+    <router-link  :to="{ name: 'AddEvent' }">New Event</router-link>
+    </span>
   </div>
 
   <!-- new element -->
@@ -45,8 +47,10 @@ export default {
   inject: ['GStore'], // <----
   computed: {
     currentUser() {
-      
       return AuthService.getUser()
+    },
+    isAdmin(){
+      return AuthService.hasRoles('ROLE_ADMIN')
     }
   },
   methods: {
