@@ -15,5 +15,12 @@ export default {
       .catch((error) => {
         return Promise.reject(error)
       })
+  },
+  logout() {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+  },
+  getUser(){
+    return JSON.parse(localStorage.getItem('user'))
   }
 }

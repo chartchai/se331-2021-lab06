@@ -21,11 +21,11 @@
         <li class="nav-item">
           <router-link to="/profile" class="nav-link">
             <font-awesome-icon icon="user" />
-            {{ currentUser.username }}
+            {{ currentUser.name }}
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" @click.prevent="logOut">
+          <a class="nav-link" @click="logout">
             <font-awesome-icon icon="sign-out-alt" /> LogOut
           </a>
         </li>
@@ -40,11 +40,19 @@
   <router-view />
 </template>
 <script>
+import AuthService from '@/services/AuthService.js'
 export default {
   inject: ['GStore'], // <----
   computed: {
     currentUser() {
-      return localStorage.getItem('user')
+      
+      return AuthService.getUser()
+    }
+  },
+  methods: {
+    logout() {
+      AuthService.logout()
+      this.$router.push({ name: 'EventList' })
     }
   }
 }
