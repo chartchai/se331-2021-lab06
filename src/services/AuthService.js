@@ -27,13 +27,14 @@ export default {
   },
   hasRoles(roles) {
     if (GStore.currentUser && roles) {
-      let containRoles = GStore.currentUser.authorities.filter(authority => roles.includes(authority))      
-      if (containRoles.length > 0){
+      let containRoles = GStore.currentUser.authorities.filter((authority) =>
+        roles.includes(authority)
+      )
+      if (containRoles.length > 0) {
         return true
-      }else{
+      } else {
         return false
       }
-      
     } else {
       return false
     }
