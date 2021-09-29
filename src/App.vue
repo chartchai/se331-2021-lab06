@@ -52,7 +52,7 @@ export default {
   methods: {
     logout() {
       AuthService.logout()
-      this.$router.push({ name: 'Login' })
+      this.$router.push({ name: 'EventList' })
     }
   }
 }
