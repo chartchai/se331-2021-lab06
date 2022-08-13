@@ -29,12 +29,7 @@ jobs:
           context: .
           push: true
           tags: dto80/331-lab06:latest
-      - 
-        name: prepare the docker-compose run
-        run: |
-              mkdir vue-331
-              cp docker-compose.yml vue-331/docker-compose.yml
-              cd vue-331
+
       - 
         name: docker compose
         uses: alex-ac/github-action-ssh-docker-compose@master      
