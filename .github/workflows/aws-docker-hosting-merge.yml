@@ -37,8 +37,11 @@ jobs:
               cd vue-331
       - 
         name: docker compose
-        uses: isbang/compose-action@v1.1.0
+        uses: alex-ac/github-action-ssh-docker-compose@master      
         with:
-          compose-file: "./docker-compose.yml"
-          down-flags: "-H ${{ secrets.HOST_SERVER }}"
-          up-flags: "-H ${{ secrets.HOST_SERVER }}"              
+          ssh_host: ${{secrets.HOST_SERVER}}
+          ssh_private_key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
+          ssh_user: ${{ secrets.HOST_USER_NAME }}          
+          docker_compose_prefix: vue-331
+          docker_compose_filename: "./docker-compose.yml"
+          
