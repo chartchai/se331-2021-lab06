@@ -131,4 +131,5 @@ router.beforeEach(() => {
 router.afterEach(() => {
   NProgress.done()
 })
+// update for rebuild
 export default router
