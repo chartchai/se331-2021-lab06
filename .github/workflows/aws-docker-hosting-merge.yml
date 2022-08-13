@@ -41,4 +41,4 @@ jobs:
         with:
           compose-file: "./docker-compose.yml"
           down-flags: "-H ${{ secrets.HOST_SERVER }}"
-          up-flagss: "-H ${{ secrets.HOST_SERVER }}"              
+          up-flags: "-H ${{ secrets.HOST_SERVER }}"              
