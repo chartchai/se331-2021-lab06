@@ -40,5 +40,5 @@ jobs:
         uses: isbang/compose-action@v1.1.0
         with:
           compose-file: "./docker-compose.yml"
-          down-flag: "-H ${{ secrets.HOST_SERVER }}"
-          up-flags: "-H ${{ secrets.HOST_SERVER }}"              
+          down-flags: "-H ${{ secrets.HOST_SERVER }}"
+          up-flagss: "-H ${{ secrets.HOST_SERVER }}"              
